@@ -5,7 +5,6 @@
  */
 
 var app = require('../app');
-var cors = require('cors');
 var debug = require('debug')('guigui-eco-back:server');
 var http = require('http');
 
@@ -13,7 +12,6 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-app.use(cors({origin: true}));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
