@@ -25,4 +25,10 @@ router.put('/:id', function(req, res, next) {
   res.json({product: req.body.product});
 });
 
+router.delete('/:id', function(req, res, next) {
+  const idx = products.findIndex(product => product.id === req.params.id);
+  products.splice(idx, 1);
+  res.json().status(200);
+});
+
 module.exports = router;
